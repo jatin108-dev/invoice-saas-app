@@ -28,8 +28,13 @@ const translations = {
 
 // 3. Currency config
 const currencyConfig = {
-  INR: { symbol: '₹', rate: 1 },
-  JPY: { symbol: '¥', rate: 1.85 }, // static rate: 1 INR = 1.85 JPY
+  INR: { symbol: '₹' },
+  JPY: { symbol: '¥' },
+};
+// formatAmount 
+const formatAmount = (amount) => {
+  const config = currencyConfig[user?.currency || 'INR'];
+  return `${config.symbol}${amount}`;
 };
 
 // 4. Provider component (wraps entire app)
