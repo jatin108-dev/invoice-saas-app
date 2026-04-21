@@ -5,15 +5,15 @@ import useAuth from '../hooks/useAuth';
 const Register = () => {
   const { register } = useAuth();
   const navigate = useNavigate();
-  const location = useLocation(); // ✅ landing se data lene ke liye
+  const location = useLocation(); // taking data from landing
 
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     phone: '',
     password: '',
-    language: location.state?.language || 'en',  // ✅ pre-filled from landing
-    currency: location.state?.currency || 'INR', // ✅ pre-filled from landing
+    language: location.state?.language || 'en',  //  pre-filled from landing
+    currency: location.state?.currency || 'INR', //  pre-filled from landing
   });
 
   const [error, setError] = useState('');
